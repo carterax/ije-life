@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310322e'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='26' font-weight='bold' letter-spacing='-1' fill='%23c6d94e' text-anchor='middle'%3Eije%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ije &middot; Dinner with strangers in Lagos</title>
+<meta name="description" content="We pick the people. We book the table. You show up. Free to join, you just pay for your own food.">
+<meta property="og:title" content="Ije &middot; Dinner with strangers in Lagos">
+<meta property="og:description" content="We pick the people. We book the table. You show up.">
+<meta property="og:url" content="https://ije.life/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  /* V1J: V1I's language, but this is the page an ad click lands on.
+     Two things change because of that, and only two.
+
+     NO IMAGES. Not "fewer" - none. Every photo we have is either a repeat or
+     a stand-in, and a paid click that lands on stock-feeling imagery bounces.
+     Colour blocks, type scale and one bled quote do the visual work instead.
+     This also means the page weighs almost nothing, which matters when the
+     traffic is mobile and paid.
+
+     WARM TRAFFIC. They already read the ad, so the page confirms rather than
+     introduces. Headline is the ad headline word for word (message match),
+     the CTA is the same three words in five places, and every one of the five
+     ad angles gets answered somewhere on the page since the ads rotate:
+     belonging, the group chat, five you'd never meet, what it isn't, cost.
+
+     Everything else is V1I: same palette, same wobbly button, same rotating
+     type, same numbered cards, one grid break, handwriting used once. */
+  :root{
+    --ground:#f4f3ef;
+    --surface:#eae9e3;
+    --ink:#191a1c;
+    --ink-soft:#5b5d60;
+    --green:#10322e;
+    --green-soft:#17453e;
+    --green-mid:#2e6f61;
+    --lime:#c6d94e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ground);color:var(--ink);font-family:Outfit,sans-serif;font-size:18px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .hand{font-family:Caveat,cursive;font-weight:600}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:4px;border-radius:6px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;
+    background:var(--green);color:#f4f3ef;text-decoration:none;font-weight:600;font-size:19px;
+    padding:16px 38px;border-radius:34px 30px 32px 28px;
+    transition:transform .18s ease,background .18s ease}
+  .btn:hover{background:var(--green-soft);transform:translateY(-2px)}
+
+  header{display:flex;justify-content:space-between;align-items:center;padding:26px 0;gap:16px}
+  /* placeholder wordmark until a design team takes it on: the name set tight
+     with the registered mark riding high off the last letter, momoamo's
+     pattern. */
+  .mark{display:inline-flex;align-items:flex-start;font-weight:800;font-size:28px;
+    letter-spacing:-.045em;line-height:1;color:var(--ink)}
+  .mark sup{font-size:.30em;font-weight:600;line-height:1;
+    margin-top:.20em;margin-left:.14em;color:var(--green-mid)}
+  header a{color:var(--ink);text-decoration:none;font-weight:600;font-size:17px;
+    border-bottom:3px solid var(--lime);padding-bottom:3px}
+  header a:hover{color:var(--green)}
+
+  /* hero: word for word the ad headline, so the click feels answered */
+  .hero{padding:56px 0 0;max-width:900px}
+  h1{font-size:clamp(40px,6.6vw,80px);font-weight:700;line-height:1.12;letter-spacing:-.025em}
+  .rot{display:inline-grid;justify-items:start;font-weight:800}
+  .lead{font-weight:500}
+  .lead i,.rot i{display:inline-block;font-style:normal}
+  .lead i{animation:intro .5s cubic-bezier(.22,.61,.36,1) both;animation-delay:calc((var(--o,0) + var(--i))*.04s)}
+  @keyframes intro{
+    from{opacity:0;filter:blur(12px);transform:translateY(14px)}
+    to{opacity:1;filter:blur(0);transform:none}
+  }
+  .rot>span{grid-area:1/1}
+  .rot i{animation:rot 11.2s cubic-bezier(.22,.61,.36,1) infinite backwards;
+    animation-delay:calc(var(--p) + var(--i)*.04s)}
+  .rot>span:nth-child(1){--p:1.5s}
+  .rot>span:nth-child(2){--p:4.3s}
+  .rot>span:nth-child(3){--p:7.1s}
+  .rot>span:nth-child(4){--p:9.9s}
+  @keyframes rot{
+    0%{opacity:0;filter:blur(10px);transform:translateY(12px)}
+    3%{opacity:1;filter:blur(0);transform:none}
+    19%{opacity:1;filter:blur(0);transform:none}
+    22%,100%{opacity:0;filter:blur(10px);transform:translateY(-12px)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .lead i{animation:none}
+    .rot i{animation:none;opacity:0}
+    .rot>span:first-child i{opacity:1}
+  }
+  .hero p{margin-top:22px;font-size:21px;color:var(--ink-soft);max-width:42ch}
+  .hero .row{margin-top:34px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .hero .cost{font-size:17px;color:var(--ink-soft)}
+  .hero .cost b{color:var(--ink);font-weight:600}
+
+  /* with no photography, the reassurances become the first colour the eye hits */
+  .no{padding:74px 0 0}
+  .nogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+    grid-template-rows:1fr auto auto}
+  .n{border-radius:20px;padding:26px 24px 30px;min-height:172px;
+    display:grid;grid-row:span 3;grid-template-rows:subgrid}
+  .n b{grid-row:2} .n span{grid-row:3}
+  .n b{display:block;font-size:23px;font-weight:700;letter-spacing:-.015em;line-height:1.1}
+  .n span{display:block;margin-top:8px;font-size:16.5px;line-height:1.45}
+  .n1{background:var(--green)} .n1 b{color:var(--lime)} .n1 span{color:rgba(244,243,239,.82)}
+  .n2{background:var(--surface)} .n2 b{color:var(--green)} .n2 span{color:var(--ink-soft)}
+  .n3{background:var(--green-mid)} .n3 b{color:var(--ground)} .n3 span{color:rgba(244,243,239,.88)}
+  .n4{background:var(--lime)} .n4 b{color:var(--green)} .n4 span{color:rgba(16,50,46,.82)}
+
+  /* THE ONE GRID BREAK. no photo to bleed, so the quote bleeds instead:
+     a lime slab that runs off the right edge of the screen, tilted, with the
+     line that does the most work in any of the ads set as big as it goes. */
+  .shout{margin:100px 0 0;position:relative}
+  .slab{background:var(--lime);color:var(--green);border-radius:26px;
+    padding:64px 60px 70px;transform:rotate(-1.4deg);
+    margin-right:calc(50% - 50vw);box-shadow:0 34px 70px -40px rgba(25,26,28,.4)}
+  .slab q{quotes:none;display:block;font-size:clamp(30px,4.6vw,60px);font-weight:700;
+    letter-spacing:-.025em;line-height:1.06;max-width:19ch}
+  .slab .who{margin-top:26px;font-size:18px;font-weight:600;color:var(--green-mid)}
+  .scribble{position:absolute;z-index:3;left:4%;bottom:-30px;
+    transform:rotate(-6deg);display:flex;align-items:flex-end;gap:6px;pointer-events:none}
+  .scribble span{font-family:Caveat,cursive;font-weight:600;font-size:29px;
+    color:var(--green-mid);line-height:1}
+  .scribble svg{width:56px;height:40px;overflow:visible}
+  .scribble path{fill:none;stroke:var(--green-mid);stroke-width:2.6;
+    stroke-linecap:round;stroke-linejoin:round}
+
+  h2{font-size:clamp(30px,4.4vw,50px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+  .how{padding:100px 0 0}
+  /* subgrid so the number, heading and copy each sit in a row shared by all
+     three cards. bottom-aligned flex only lines up the last line, which is why
+     headings drifted when one card had less to say. */
+  .steps{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+    grid-template-rows:auto 1fr auto auto}
+  .step{border-radius:20px;padding:28px 28px 32px;min-height:340px;
+    display:grid;grid-row:span 4;grid-template-rows:subgrid}
+  .step .no{grid-row:1} .step h3{grid-row:3} .step p{grid-row:4}
+  .step .no{font-size:clamp(42px,5vw,62px);font-weight:700;line-height:1;letter-spacing:-.03em;padding:0}
+  .step h3{font-size:clamp(23px,2.5vw,30px);font-weight:700;
+    letter-spacing:-.022em;line-height:1.08}
+  .step p{margin-top:12px;font-size:17px;line-height:1.5}
+  .s1{background:var(--green)}
+  .s1 .no{color:var(--lime)} .s1 h3{color:var(--ground)} .s1 p{color:rgba(244,243,239,.8)}
+  .s2{background:var(--lime)}
+  .s2 .no{color:var(--green-mid)} .s2 h3{color:var(--green)} .s2 p{color:rgba(16,50,46,.82)}
+  .s3{background:var(--green-mid)}
+  .s3 .no{color:var(--lime)} .s3 h3{color:var(--ground)} .s3 p{color:rgba(244,243,239,.88)}
+
+  /* the product. no photo, so the facts carry it, set big */
+  .nights{padding:100px 0 0}
+  .feature{margin-top:34px;background:var(--surface);border-radius:24px;
+    padding:52px 54px 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .tag{display:inline-flex;align-items:center;font-size:15px;font-weight:600;color:var(--green);
+    background:var(--lime);padding:7px 16px;border-radius:999px}
+  .feature h3{margin-top:16px;font-size:clamp(40px,6vw,68px);font-weight:700;
+    letter-spacing:-.028em;line-height:.98}
+  .feature .btn{margin-top:30px}
+  .card{background:var(--ground);border-radius:18px;padding:30px 32px 32px}
+  .card dl{display:grid;gap:0}
+  .card .r{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+    padding:16px 0;border-bottom:1.5px solid rgba(25,26,28,.13)}
+  .card .r:last-child{border-bottom:none;padding-bottom:0}
+  .card dt{font-size:16.5px;color:var(--ink-soft)}
+  .card dd{font-size:20px;font-weight:700;letter-spacing:-.01em;text-align:right}
+  .also{margin-top:40px;font-size:17px;color:var(--ink-soft);
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+  .also b{font-weight:600;color:var(--ink)}
+  .also .hand{font-size:22px;color:var(--green-mid);margin-left:4px}
+
+  .close{margin:100px 0 0;background:var(--green);color:#f4f3ef;
+    border-radius:120px 30px 120px 30px;padding:96px 34px;text-align:center}
+  .close h2{color:#fff;max-width:16ch;margin:0 auto}
+  .close p{margin-top:16px;font-size:19px;color:rgba(244,243,239,.84)}
+  .close .btn{margin-top:32px;background:var(--lime);color:var(--green)}
+  .close .btn:hover{background:#d3e463}
+  .close .hand{display:block;margin-top:22px;font-size:24px;color:var(--lime)}
+  footer{padding:34px 0 54px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-size:16px;color:var(--ink-soft)}
+
+  @media(max-width:900px){
+    .nogrid{grid-template-columns:repeat(2,1fr)}
+    .slab{margin-right:0;transform:none;padding:40px 30px 44px}
+    .scribble{position:static;transform:rotate(-4deg);margin:20px 0 0 4px}
+    /* one column: subgrid has nothing to align against, so stack plainly */
+    .steps,.nogrid{grid-template-rows:none}
+    .steps{grid-template-columns:1fr}
+    .step,.n{display:flex;flex-direction:column;grid-row:auto}
+    .step .no,.step h3,.step p,.n b,.n span{grid-row:auto}
+    .step h3{margin-top:26px}
+    .step{min-height:0;padding:24px 24px 28px}
+    .feature{grid-template-columns:1fr;padding:34px 28px 38px;gap:32px}
+    .close{padding:66px 24px;border-radius:70px 22px 70px 22px}
+  }
+  @media(max-width:560px){
+    .nogrid{grid-template-columns:1fr}
+    .n{min-height:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="mark">IJE<sup>&reg;</sup></span>
+    <a href="https://tally.so/r/KYZDgM" target="_blank" rel="noopener">Save me a seat</a>
+  </header>
+
+  <section class="hero">
+    <h1 aria-label="Dinner with strangers. Bring nothing.">
+      <span class="lead">Dinner with strangers.</span><br><span class="lead" style="--o:22">Bring</span>&nbsp;<span class="rot" aria-hidden="true">
+        <span>nothing.</span>
+        <span>yourself.</span>
+        <span>an appetite.</span>
+        <span>nobody.</span>
+      </span>
+    </h1>
+    <script>
+    /* runs here, right under the h1, so the letters exist before first paint */
+    for (const el of document.querySelectorAll(".lead, .rot > span"))
+      el.innerHTML = [...el.textContent].map((c, i) =>
+        `<i style="--i:${i}">${c === " " ? "&nbsp;" : c}</i>`).join("");
+    </script>
+    <p>We pick the people. We book the table. You show up.</p>
+    <div class="row">
+      <a class="btn" href="https://tally.so/r/KYZDgM" target="_blank" rel="noopener">Save me a seat</a>
+      <span class="cost">Free to join. <b>You pay for your own food.</b></span>
+    </div>
+  </section>
+
+  <!-- the reason before the reassurance: land the ache first, then remove friction -->
+  <section class="shout">
+    <div class="slab">
+      <q>Lagos has 20 million people. You see the same nine.</q>
+      <div class="who">Friday, we introduce you to five of them.</div>
+    </div>
+    <div class="scribble" aria-hidden="true">
+      <svg viewBox="0 0 56 40"><path d="M4 4 C22 2 40 12 48 30"/><path d="M40 27 L49 32 L44 22"/></svg>
+      <span>you know it's true</span>
+    </div>
+  </section>
+
+  <section class="no">
+    <div class="nogrid">
+      <div class="n n1"><b>No dress code</b><span>Wear what you wore.</span></div>
+      <div class="n n2"><b>No networking</b><span>Nobody wants your deck.</span></div>
+      <div class="n n3"><b>No plus one</b><span>Everyone arrives alone.</span></div>
+      <div class="n n4"><b>No pressure</b><span>Quiet people do great.</span></div>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2>Three things, then you're in.</h2>
+    <div class="steps">
+      <div class="step s1">
+        <span class="no">01</span>
+        <h3>Tell us about you</h3>
+        <p>Nine questions. No essays.</p>
+      </div>
+      <div class="step s2">
+        <span class="no">02</span>
+        <h3>We build your table</h3>
+        <p>Six people, picked on purpose.</p>
+      </div>
+      <div class="step s3">
+        <span class="no">03</span>
+        <h3>You show up</h3>
+        <p>Come hungry.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="nights">
+    <h2>What's on</h2>
+    <article class="feature">
+      <div>
+        <span class="tag">Happening now</span>
+        <h3>Dinner</h3>
+        <a class="btn" href="https://tally.so/r/KYZDgM" target="_blank" rel="noopener">Save me a seat</a>
+      </div>
+      <div class="card">
+        <dl>
+          <div class="r"><dt>When</dt><dd>Fridays, 7pm</dd></div>
+          <div class="r"><dt>Who</dt><dd>Six strangers</dd></div>
+          <div class="r"><dt>Where</dt><dd>Somewhere easy in Lagos</dd></div>
+          <div class="r"><dt>Cost</dt><dd>Just your food</dd></div>
+        </dl>
+      </div>
+    </article>
+    <p class="also"><b>Beach days</b>, <b>game nights</b> and <b>rooftops</b> next.
+      <span class="hand">which one first?</span></p>
+  </section>
+
+  <section class="close">
+    <h2>Pull up a chair.</h2>
+    <p>Worst case: a good dinner and a story.</p>
+    <a class="btn" href="https://tally.so/r/KYZDgM" target="_blank" rel="noopener">Save me a seat</a>
+    <span class="hand">see you Friday</span>
+  </section>
+
+  <footer>
+    <span>IJE&reg; &middot; Lagos</span>
+    <span>Lagos, for now.</span>
+  </footer>
+</div>
+</body>
+</html>
