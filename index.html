@@ -106,19 +106,17 @@
   .hero .cost{font-size:17px;color:var(--ink-soft)}
   .hero .cost b{color:var(--ink);font-weight:600}
 
-  /* with no photography, the reassurances become the first colour the eye hits */
-  .no{padding:74px 0 0}
-  .nogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
-    grid-template-rows:1fr auto auto}
-  .n{border-radius:20px;padding:26px 24px 30px;min-height:172px;
-    display:grid;grid-row:span 3;grid-template-rows:subgrid}
-  .n b{grid-row:2} .n span{grid-row:3}
-  .n b{display:block;font-size:23px;font-weight:700;letter-spacing:-.015em;line-height:1.1}
-  .n span{display:block;margin-top:8px;font-size:16.5px;line-height:1.45}
-  .n1{background:var(--green)} .n1 b{color:var(--lime)} .n1 span{color:rgba(244,243,239,.82)}
-  .n2{background:var(--surface)} .n2 b{color:var(--green)} .n2 span{color:var(--ink-soft)}
-  .n3{background:var(--green-mid)} .n3 b{color:var(--ground)} .n3 span{color:rgba(244,243,239,.88)}
-  .n4{background:var(--lime)} .n4 b{color:var(--green)} .n4 span{color:rgba(16,50,46,.82)}
+  /* quiet by design: a lime rule, a bold line, a soft line. these sit between
+     the lime slab and the coloured steps, so four more colour blocks here made
+     three loud sections in a row. no cards, no subgrid, the rules align. */
+  /* the scribble hangs 30px below the slab, so this clears it, not just the slab */
+  .no{padding:100px 0 0}
+  .nogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+  .n{border-top:3px solid var(--lime);padding-top:22px}
+  .n b{display:block;font-size:23px;font-weight:700;letter-spacing:-.015em;
+    line-height:1.1;color:var(--ink)}
+  .n span{display:block;margin-top:10px;font-size:16.5px;line-height:1.45;
+    color:var(--ink-soft)}
 
   /* THE ONE GRID BREAK. no photo to bleed, so the quote bleeds instead:
      a lime slab that runs off the right edge of the screen, tilted, with the
@@ -195,18 +193,16 @@
     .slab{margin-right:0;transform:none;padding:40px 30px 44px}
     .scribble{position:static;transform:rotate(-4deg);margin:20px 0 0 4px}
     /* one column: subgrid has nothing to align against, so stack plainly */
-    .steps,.nogrid{grid-template-rows:none}
-    .steps{grid-template-columns:1fr}
-    .step,.n{display:flex;flex-direction:column;grid-row:auto}
-    .step .no,.step h3,.step p,.n b,.n span{grid-row:auto}
+    .steps{grid-template-rows:none;grid-template-columns:1fr}
+    .step{display:flex;flex-direction:column;grid-row:auto}
+    .step .no,.step h3,.step p{grid-row:auto}
     .step h3{margin-top:26px}
     .step{min-height:0;padding:24px 24px 28px}
     .feature{grid-template-columns:1fr;padding:34px 28px 38px;gap:32px}
     .close{padding:66px 24px;border-radius:70px 22px 70px 22px}
   }
   @media(max-width:560px){
-    .nogrid{grid-template-columns:1fr}
-    .n{min-height:0}
+    .nogrid{grid-template-columns:1fr;gap:26px}
   }
 </style>
 </head>
