@@ -71,10 +71,13 @@
 
   /* hero: word for word the ad headline, so the click feels answered */
   .hero{padding:56px 0 0;max-width:900px}
-  h1{font-size:clamp(40px,6.6vw,80px);font-weight:700;line-height:1.12;letter-spacing:-.025em}
+  /* 40px was too tall a floor for a 390px phone: the line could not fit and
+     could not wrap. desktop is unchanged, only the small-screen floor moves. */
+  h1{font-size:clamp(34px,6.6vw,80px);font-weight:700;line-height:1.12;letter-spacing:-.025em}
   .rot{display:inline-grid;justify-items:start;font-weight:800}
   .lead{font-weight:500}
   .lead i,.rot i{display:inline-block;font-style:normal}
+  h1 w{white-space:nowrap}
   .lead i{animation:intro .5s cubic-bezier(.22,.61,.36,1) both;animation-delay:calc((var(--o,0) + var(--i))*.04s)}
   @keyframes intro{
     from{opacity:0;filter:blur(12px);transform:translateY(14px)}
@@ -216,7 +219,7 @@
 
   <section class="hero">
     <h1 aria-label="Dinner with strangers. Bring nothing.">
-      <span class="lead">Dinner with strangers.</span><br><span class="lead" style="--o:22">Bring</span>&nbsp;<span class="rot" aria-hidden="true">
+      <span class="lead">Dinner with strangers.</span><br><span class="lead" style="--o:22">Bring</span> <span class="rot" aria-hidden="true">
         <span>nothing.</span>
         <span>yourself.</span>
         <span>an appetite.</span>
@@ -224,10 +227,19 @@
       </span>
     </h1>
     <script>
-    /* runs here, right under the h1, so the letters exist before first paint */
-    for (const el of document.querySelectorAll(".lead, .rot > span"))
-      el.innerHTML = [...el.textContent].map((c, i) =>
-        `<i style="--i:${i}">${c === " " ? "&nbsp;" : c}</i>`).join("");
+    /* runs here, right under the h1, so the letters exist before first paint.
+       every letter is its own inline-block for the stagger, and a browser will
+       happily break a line between two adjacent inline-blocks. that split words
+       mid-letter on narrow screens and stranded "strangers." full stop on a
+       line of its own. so each word gets a nowrap box: breaks between words,
+       never inside one. --i keeps counting across words so the stagger reads
+       as one continuous sweep. */
+    for (const el of document.querySelectorAll(".lead, .rot > span")) {
+      let i = 0;
+      el.innerHTML = el.textContent.split(" ").map(word =>
+        `<w>${[...word].map(c => `<i style="--i:${i++}">${c}</i>`).join("")}</w>`
+      ).join(" ");
+    }
     </script>
     <p>We pick the people. We book the table. You show up.</p>
     <div class="row">
