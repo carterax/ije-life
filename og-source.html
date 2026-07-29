@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{--ground:#f4f3ef;--green:#10322e;--green-mid:#2e6f61;--lime:#c6d94e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1200px;height:630px;background:var(--green);font-family:Outfit,sans-serif;
+    overflow:hidden;position:relative}
+  /* the page's bleeding lime slab, cropped by the frame the same way */
+  /* bleeds off the right edge only, same as the page. left corners stay visible
+     or it stops reading as a card and turns into a stripe. */
+  .slab{position:absolute;left:56px;top:150px;right:-120px;background:var(--lime);
+    border-radius:26px;transform:rotate(-1.4deg);padding:52px 60px 58px}
+  .slab q{quotes:none;display:block;color:var(--green);font-weight:700;font-size:78px;
+    line-height:1.02;letter-spacing:-.028em;max-width:15ch}
+  .mark{position:absolute;left:64px;top:48px;display:inline-flex;align-items:flex-start;
+    font-weight:800;font-size:40px;letter-spacing:-.045em;line-height:1;color:var(--ground)}
+  .mark sup{font-size:.30em;font-weight:600;line-height:1;margin-top:.20em;margin-left:.14em;
+    color:var(--lime)}
+  .foot{position:absolute;left:64px;right:64px;bottom:46px;display:flex;
+    justify-content:space-between;align-items:baseline}
+  .foot .a{font-size:27px;font-weight:600;color:var(--ground)}
+  .foot .b{font-size:27px;font-weight:700;color:var(--lime);letter-spacing:-.01em}
+  .hand{position:absolute;right:74px;top:56px;font-family:Caveat,cursive;font-weight:600;
+    font-size:34px;color:var(--lime);transform:rotate(-6deg)}
+</style></head>
+<body>
+  <span class="mark">IJE<sup>&reg;</sup></span>
+  <span class="hand">you know it's true</span>
+  <div class="slab"><q>Lagos has 20 million people. You see the same nine.</q></div>
+  <div class="foot">
+    <span class="a">Dinner with strangers.</span>
+    <span class="b">ije.life</span>
+  </div>
+</body></html>
