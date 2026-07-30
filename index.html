@@ -125,8 +125,9 @@
   .slab{background:var(--lime);color:var(--green);border-radius:26px;
     padding:64px 60px 70px;transform:rotate(-1.4deg);
     margin-right:calc(50% - 50vw);box-shadow:0 34px 70px -40px rgba(25,26,28,.4)}
-  .slab q{quotes:none;display:block;font-size:clamp(30px,4.6vw,60px);font-weight:700;
-    letter-spacing:-.025em;line-height:1.06;max-width:19ch}
+  /* real quote marks: it is someone talking, not the brand narrating */
+  .slab q{quotes:"\201C" "\201D";display:block;font-size:clamp(30px,4.6vw,60px);font-weight:700;
+    letter-spacing:-.025em;line-height:1.06;max-width:20ch;text-indent:-.42em}
   .slab .who{margin-top:26px;font-size:18px;font-weight:600;color:var(--green-mid)}
   .scribble{position:absolute;z-index:3;left:4%;bottom:-30px;
     transform:rotate(-6deg);display:flex;align-items:flex-end;gap:6px;pointer-events:none}
