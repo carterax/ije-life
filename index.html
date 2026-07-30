@@ -179,6 +179,19 @@
   .also b{font-weight:600;color:var(--ink)}
   .also .hand{font-size:22px;color:var(--green-mid);margin-left:4px}
 
+  /* the questions people actually type, so they are set like something typed.
+     the ask is a bubble with a tail, the reply is a plain line under it.
+     reader speaks lowercase, we answer in sentence case, which is the same
+     split as the slab quote and the "same" scribble. no accordion: six short
+     answers are cheaper to read than six things to click. */
+  .faq{padding:100px 0 0}
+  .faq h2{max-width:14ch}
+  .qa{margin-top:38px;display:grid;grid-template-columns:1fr 1fr;gap:36px 52px}
+  .qa dt{display:inline-block;background:var(--surface);color:var(--ink);
+    font-size:19px;font-weight:600;line-height:1.35;padding:14px 22px;
+    border-radius:22px 20px 22px 6px}
+  .qa dd{margin:14px 0 0 14px;font-size:17.5px;line-height:1.5;color:var(--ink-soft)}
+
   .close{margin:100px 0 0;background:var(--green);color:#f4f3ef;
     border-radius:120px 30px 120px 30px;padding:96px 34px;text-align:center}
   .close h2{color:#fff;max-width:16ch;margin:0 auto}
@@ -199,6 +212,7 @@
     .step .no,.step h3,.step p{grid-row:auto}
     .step h3{margin-top:26px}
     .step{min-height:0;padding:24px 24px 28px}
+    .qa{grid-template-columns:1fr;gap:28px}
     .feature{grid-template-columns:1fr;padding:34px 28px 38px;gap:32px}
     .close{padding:66px 24px;border-radius:70px 22px 70px 22px}
   }
@@ -306,6 +320,37 @@
     </article>
     <p class="also"><b>Beach days</b>, <b>game nights</b> and <b>rooftops</b> next.
       <span class="hand">which one first?</span></p>
+  </section>
+
+  <!-- header is the setup, every question finishes it: "ok but what if..." -->
+  <section class="faq">
+    <h2>ok but</h2>
+    <dl class="qa">
+      <div>
+        <dt>what if I don't like them?</dt>
+        <dd>Tell us. You won't be seated together again.</dd>
+      </div>
+      <div>
+        <dt>is this a dating thing?</dt>
+        <dd>No. Not a networking thing either. Just dinner.</dd>
+      </div>
+      <div>
+        <dt>who else is coming?</dt>
+        <dd>Five people who answered the same questions you did.</dd>
+      </div>
+      <div>
+        <dt>island or mainland?</dt>
+        <dd>Whichever side your table lands on. You get the address before the day.</dd>
+      </div>
+      <div>
+        <dt>what if I'm bad at this?</dt>
+        <dd>Nobody's good at it. That's what the table is for.</dd>
+      </div>
+      <div>
+        <dt>what does it cost?</dt>
+        <dd>Nothing to join. You pay for what you eat.</dd>
+      </div>
+    </dl>
   </section>
 
   <section class="close">
