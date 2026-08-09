@@ -227,12 +227,26 @@
     .nogrid{grid-template-columns:1fr;gap:26px}
   }
 </style>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1330163169325152');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1330163169325152&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 <div class="wrap">
   <header>
     <span class="mark">IJE<sup>&reg;</sup></span>
-    <a href="https://tally.so/r/KYZDgM" target="_blank" rel="noopener">Save me a seat</a>
+    <a href="/apply.html">Save me a seat</a>
   </header>
 
   <section class="hero">
@@ -261,7 +275,7 @@
     </script>
     <p>We pick the people. We book the table. You show up.</p>
     <div class="row">
-      <a class="btn" href="https://tally.so/r/KYZDgM" target="_blank" rel="noopener">Save me a seat</a>
+      <a class="btn" href="/apply.html">Save me a seat</a>
       <span class="cost"><b>Free to join.</b></span>
     </div>
   </section>
@@ -314,7 +328,7 @@
       <div>
         <span class="tag">Happening now</span>
         <h3>Dinner</h3>
-        <a class="btn" href="https://tally.so/r/KYZDgM" target="_blank" rel="noopener">Save me a seat</a>
+        <a class="btn" href="/apply.html">Save me a seat</a>
       </div>
       <div class="card">
         <dl>
@@ -362,7 +376,7 @@
   <section class="close">
     <h2>Pull up a chair.</h2>
     <p>Worst case: a good dinner and a story.</p>
-    <a class="btn" href="https://tally.so/r/KYZDgM" target="_blank" rel="noopener">Save me a seat</a>
+    <a class="btn" href="/apply.html">Save me a seat</a>
     <span class="hand">see you there</span>
   </section>
 
@@ -371,5 +385,11 @@
     <span>Lagos, for now.</span>
   </footer>
 </div>
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href="/apply.html"]');
+  if(a && window.fbq) fbq('trackCustom','ApplyStarted');
+});
+</script>
 </body>
 </html>

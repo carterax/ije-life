@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310322e'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='26' font-weight='bold' letter-spacing='-1' fill='%23c6d94e' text-anchor='middle'%3Eije%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply &middot; Ije</title>
+<meta name="description" content="Six strangers, one table, somewhere in Lagos. Tell us about yourself.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1330163169325152');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1330163169325152&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel -->
+
+<style>
+:root{
+  --ground:#f4f3ef; --surface:#eae9e3; --ink:#191a1c; --ink-soft:#5b5d60;
+  --green:#10322e; --green-mid:#2e6f61; --lime:#c6d94e;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:Outfit,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:34px 22px 90px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:44px}
+.mark{font-weight:800;font-size:23px;letter-spacing:-.03em;color:var(--green);text-decoration:none}
+.back{font-size:15px;font-weight:500;color:var(--ink-soft);text-decoration:none}
+.back:hover{color:var(--ink)}
+h1{font-size:clamp(34px,7vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:0 0 16px}
+.lede{font-size:18px;line-height:1.6;color:var(--ink-soft);margin:0 0 10px;max-width:30em}
+.hand{font-family:Caveat,cursive;font-weight:600;font-size:25px;color:var(--green-mid);
+  margin:0 0 34px;transform:rotate(-.6deg);display:inline-block}
+.formwrap{background:#fbfaf7;border:1px solid rgba(25,26,28,.1);border-radius:18px;
+  padding:14px 18px;min-height:420px}
+iframe{display:block;width:100%;border:0}
+.fallback{margin-top:26px;font-size:15px;color:var(--ink-soft)}
+.fallback a{color:var(--green-mid);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="mark" href="/">ije</a>
+    <a class="back" href="/">&larr; back</a>
+  </div>
+
+  <h1>Save me a seat.</h1>
+  <p class="lede">Tell us about yourself. It takes under three minutes, a real person reads it,
+    and we build the table from there.</p>
+  <p class="hand">six strangers, one table, somewhere in Lagos</p>
+
+  <div class="formwrap">
+    <iframe data-tally-src="https://tally.so/embed/KYZDgM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy" width="100%" height="480" title="Ije application"></iframe>
+  </div>
+
+  <p class="fallback">Form not loading?
+    <a href="https://tally.so/r/KYZDgM" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+</div>
+
+<script>
+// Tally embed loader
+(function(){
+  var d=document, w="https://tally.so/widgets/embed.js";
+  var load=function(){
+    if(typeof Tally!=="undefined"){Tally.loadEmbeds();return;}
+    d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc;});
+  };
+  if(typeof Tally!=="undefined"){load();}
+  else if(d.querySelector('script[src="'+w+'"]')==null){
+    var s=d.createElement("script"); s.src=w; s.onload=load; s.onerror=load; d.body.appendChild(s);
+  }
+})();
+
+// Fire Lead once, when Tally reports a submission
+(function(){
+  var fired=false;
+  window.addEventListener("message", function(e){
+    if(typeof e.origin==="string" && e.origin.indexOf("tally.so")===-1) return;
+    var data=e.data;
+    if(typeof data==="string"){ try{ data=JSON.parse(data); }catch(err){ return; } }
+    if(data && data.event==="Tally.FormSubmitted" && !fired){
+      fired=true;
+      if(window.fbq) fbq('track','Lead');
+    }
+  });
+})();
+</script>
+</body>
+</html>
