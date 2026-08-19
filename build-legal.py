@@ -20,6 +20,8 @@ DOCS = [
      "The agreement between you and Ije when you apply or pay for a seat."),
     ("Ije - Privacy Policy.md", "privacy", "Privacy Policy",
      "What we collect when you apply to Ije, why, and what rights you have over it."),
+    ("Ije - Cancellation and Refund Policy.md", "refunds", "Cancellation &amp; Refunds",
+     "When your curation fee is refunded, held for the next dinner, or forfeited."),
 ]
 
 # Lifted from index.html so the legal pages read as the same website. Same
@@ -115,8 +117,9 @@ TEMPLATE = """<!doctype html>
 """
 
 OTHER = {
-    "terms": 'Also worth reading: our <a href="/privacy">Privacy Policy</a>, which forms part of these terms.',
-    "privacy": 'Also worth reading: our <a href="/terms">Terms &amp; Conditions</a>.',
+    "terms": 'Also worth reading: our <a href="/privacy">Privacy Policy</a>, which forms part of these terms, and our <a href="/refunds">Cancellation &amp; Refund Policy</a>.',
+    "privacy": 'Also worth reading: our <a href="/terms">Terms &amp; Conditions</a> and our <a href="/refunds">Cancellation &amp; Refund Policy</a>.',
+    "refunds": 'This policy forms part of our <a href="/terms">Terms &amp; Conditions</a>. Also worth reading: our <a href="/privacy">Privacy Policy</a>.',
 }
 
 def build():
