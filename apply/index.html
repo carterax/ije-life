@@ -47,6 +47,11 @@ h1{font-size:clamp(34px,7vw,52px);font-weight:800;letter-spacing:-.03em;line-hei
 iframe{display:block;width:100%;border:0}
 .fallback{margin-top:26px;font-size:15px;color:var(--ink-soft)}
 .fallback a{color:var(--green-mid);font-weight:600}
+.legal{margin-top:38px;padding-top:20px;border-top:1px solid rgba(25,26,28,.1);
+  font-size:14px;color:var(--ink-soft)}
+.legal a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid rgba(25,26,28,.22)}
+.legal a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.legal .sep{padding:0 8px;opacity:.5}
 </style>
 </head>
 <body>
@@ -68,6 +73,12 @@ iframe{display:block;width:100%;border:0}
 
   <p class="fallback">Form not loading?
     <a href="https://tally.so/r/KYZDgM" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+
+  <!-- Under the form, not in a footer nobody scrolls to: this is the page where
+       somebody hands over their name, their number and eventually ₦10,000. -->
+  <p class="legal">
+    <a href="/terms">Terms</a><span class="sep">&middot;</span><a href="/privacy">Privacy</a><span class="sep">&middot;</span><a href="/refunds">Refunds</a>
+  </p>
 </div>
 
 <script>
