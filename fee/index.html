@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310322e'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='26' font-weight='bold' letter-spacing='-1' fill='%23c6d94e' text-anchor='middle'%3Eije%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ije &middot; The &#8358;10,000</title>
+<meta name="description" content="What the Ije curation fee pays for, what it does not, and what happens to it if your plans change.">
+<meta property="og:title" content="Ije &middot; The &#8358;10,000">
+<meta property="og:description" content="What the curation fee pays for, what it does not, and what happens if your plans change.">
+<meta property="og:url" content="https://ije.life/fee">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ije.life/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  /* Same language as the landing page. One job: answer the question a third
+     of applicants ask on the form, in the order they ask it. Not a pitch and
+     not a legal document; the terms are one link away for that. */
+  :root{
+    --ground:#f4f3ef; --surface:#eae9e3; --ink:#191a1c; --ink-soft:#5b5d60;
+    --green:#10322e; --green-soft:#17453e; --green-mid:#2e6f61; --lime:#c6d94e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:Outfit,sans-serif;
+    font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .hand{font-family:Caveat,cursive;font-weight:600}
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px}
+
+  header{background:var(--green);color:var(--ground);padding:28px 0 76px}
+  header .wrap{display:flex;flex-direction:column;gap:36px}
+  .home{color:var(--lime);text-decoration:none;font-weight:700;font-size:21px;
+    letter-spacing:-.6px;align-self:flex-start}
+  h1{font-size:clamp(36px,8vw,58px);line-height:1.02;letter-spacing:-2px;font-weight:800}
+  header p{color:#cfd8d3;max-width:36ch;margin-top:16px}
+
+  main{padding-bottom:80px}
+
+  /* The whole answer, before anything else. Somebody who reads one card and
+     leaves should still have the right idea. */
+  .split{margin-top:-46px;display:grid;gap:18px}
+  .card{background:#fff;border:1px solid #e4e1da;border-radius:24px 20px 24px 20px;
+    padding:30px 28px 28px}
+  .card h2{font-size:23px;letter-spacing:-.7px}
+  .card ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+  .card li{padding-left:28px;position:relative}
+  .card li::before{content:"";position:absolute;left:0;top:11px;width:14px;height:2px;
+    background:var(--green-mid);border-radius:2px}
+  .card.not li::before{background:#c9c6bd}
+  .card.not{background:var(--surface);border-color:#ded9d0}
+  .card.not h2,.card.not li{color:var(--ink-soft)}
+
+  .money{margin-top:34px;background:var(--green);color:var(--ground);
+    border-radius:26px 22px 26px 22px;padding:34px 30px}
+  .money h2{font-size:26px;letter-spacing:-.8px}
+  .row{margin-top:20px;display:flex;justify-content:space-between;gap:16px;
+    padding-bottom:14px;border-bottom:1px solid rgba(244,243,239,.16)}
+  .row:last-of-type{border-bottom:0;padding-bottom:0}
+  .row span:first-child{color:#cfd8d3}
+  .row span:last-child{font-weight:700;white-space:nowrap}
+  .money p{color:#cfd8d3;font-size:16px;margin-top:18px}
+
+  .qa{margin-top:34px;display:grid;gap:22px}
+  .qa h2{font-size:26px;letter-spacing:-.8px}
+  .q{font-weight:700;font-size:19px;letter-spacing:-.3px}
+  .a{color:var(--ink-soft);margin-top:4px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;
+    width:100%;margin-top:34px;background:var(--green);color:#f4f3ef;text-decoration:none;
+    font-weight:700;font-size:19px;padding:14px 30px;border-radius:34px 30px 32px 28px;
+    transition:transform .18s ease,background .18s ease}
+  .btn:hover{background:var(--green-soft);transform:translateY(-2px)}
+  .btn:active{transform:translateY(0)}
+
+  .small{margin-top:26px;color:var(--ink-soft);font-size:16px}
+  .small a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+
+  footer{border-top:1px solid #dcdad3;padding:26px 0 44px;color:var(--ink-soft);
+    font-size:15px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  footer a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid #cfcdc6}
+
+  @media(max-width:560px){
+    header{padding-bottom:64px}
+    .card{padding:26px 22px 24px;border-radius:20px}
+    .money{padding:30px 22px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="home" href="/">IJE&reg;</a>
+    <div>
+      <h1>The &#8358;10,000,<br>explained.</h1>
+      <p>It is a fair question, and about a third of people ask it. Here is the
+        whole answer.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="split">
+    <div class="card">
+      <h2>What it pays for</h2>
+      <ul>
+        <li>Reading every application and building a table of six who should
+          actually enjoy each other.</li>
+        <li>Booking and holding the table, so six strangers are not standing
+          outside a full restaurant on a Friday.</li>
+        <li>The deck of questions on the table, and a host who keeps the night
+          moving.</li>
+        <li>Most of all, it is what makes people turn up. A free seat is the
+          one nobody feels bad about skipping.</li>
+      </ul>
+    </div>
+
+    <div class="card not">
+      <h2>What it is not</h2>
+      <ul>
+        <li>It is not your food or your drinks. Those you pay for on the night,
+          like any dinner out.</li>
+        <li>It is not a membership. One fee, one seat, one night.</li>
+        <li>It is not a dating fee. People come for different reasons and we
+          never promise you any of them.</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="money">
+    <h2>What a night actually costs you</h2>
+    <div class="row"><span>Your seat at the table</span><span>&#8358;10,000</span></div>
+    <div class="row"><span>Food and drinks, on the night</span><span>&#8358;20,000 and up</span></div>
+    <div class="row"><span>Anything else</span><span>Nothing</span></div>
+    <p>We tell you the restaurant three days before, so you can look at the menu
+      and know what you are walking into.</p>
+  </section>
+
+  <section class="qa">
+    <h2>The rest of it</h2>
+
+    <div>
+      <div class="q">What if I pay and then cannot make it?</div>
+      <div class="a">Tell us more than 48 hours before and we refund you, or move
+        you to another table. Your call. Inside 48 hours the seat is booked and
+        the restaurant is expecting six people, so we cannot.</div>
+    </div>
+
+    <div>
+      <div class="q">What if I hate it?</div>
+      <div class="a">Tell us honestly afterwards. We read every word of it, and
+        it changes who sits where next time.</div>
+    </div>
+
+    <div>
+      <div class="q">Do I pay when I apply?</div>
+      <div class="a">No. Applying is free. You only pay once we have found you a
+        table and sent you the invite, and the seat is held for 24 hours.</div>
+    </div>
+
+    <div>
+      <div class="q">Who is at the table?</div>
+      <div class="a">Five people you have not met. You find out who when you sit
+        down, and that is on purpose.</div>
+    </div>
+  </section>
+
+  <a class="btn" href="/apply">Apply for a seat</a>
+
+  <p class="small">Applying is free and takes two minutes. Read the
+    <a href="/refunds">refund policy</a>, the <a href="/terms">terms</a> and the
+    <a href="/privacy">privacy policy</a>.</p>
+
+  <p class="small">Six people, one table, that&rsquo;s it.
+    <span class="hand">See you there.</span></p>
+
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>IJE&reg;</span>
+    <span>
+      <a href="/terms">Terms</a> &middot; <a href="/privacy">Privacy</a> &middot;
+      Lagos, for now.
+    </span>
+  </footer>
+</div>
+
+</body>
+</html>
