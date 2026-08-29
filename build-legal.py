@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""Turn the two legal markdown files into pages on ije.life.
+"""Turn the three legal markdown files into pages on ije.life.
 
-The markdown on the Desktop is the source of truth. Editing HTML by hand
+The markdown in ./legal is the source of truth, and lives in this repo. It used to live loose on the
+Desktop, where it was lost; it was recovered from these published pages on
+29 Aug 2026 and moved into the repo so that cannot happen twice. Editing HTML by hand
 means the site and the document you send a lawyer drift apart, and the one
 people can read is the one that is wrong.
 
@@ -13,7 +15,7 @@ import os
 import markdown
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.expanduser("~/Desktop")
+SRC = os.path.join(HERE, "legal")
 
 DOCS = [
     ("Ije - Terms and Conditions.md", "terms", "Terms &amp; Conditions",
